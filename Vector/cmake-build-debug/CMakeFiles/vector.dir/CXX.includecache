@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/vector.hpp
+cstddef
+-
+sstream
+-
+stdexcept
+-
+
+/home/xetera/cs1d/Vector/src/vector.cpp
+vector.hpp
+/home/xetera/cs1d/Vector/src/vector.hpp
+
