@@ -1,4 +1,3 @@
-#pragma once
 #include <cstddef>
 #include <sstream>
 #include <stdexcept>
@@ -8,10 +7,8 @@ using std::size_t;
 template <class T>
 class Vector {
   static constexpr size_t DEFAULT_CAPACITY = 1;
-  static constexpr size_t DEFAULT_SIZE     = 1;
+  static constexpr size_t DEFAULT_SIZE     = 0;
   T* array;
-  size_t capacity = DEFAULT_CAPACITY;
-  size_t size     = DEFAULT_SIZE;
 
   void copy(const T* from, T* to) const {
     for(size_t i = 0; i < size; ++i) {
@@ -23,17 +20,27 @@ class Vector {
     size = vector.size;
     copy(vector.array, array);
   }
-  void move_vector(const Vector& vector) {
-    array    = vector.array;
-    size     = vector.size;
-    capacity = vector.capacity;
+  void move_vector(Vector& vector) {
+    array        = vector.array;
+    size         = vector.size;
+    capacity     = vector.capacity;
+    vector.array = nullptr;
+  }
+  void move_vector(Vector&& vector) {
+    array        = vector.array;
+    size         = vector.size;
+    capacity     = vector.capacity;
+    vector.array = nullptr;
   }
 
- public:
+public:
+  size_t capacity = DEFAULT_CAPACITY;
+  size_t size     = DEFAULT_SIZE;
   Vector() {
     array = new T[capacity];
   }
   Vector(const Vector& vector) {
+    array = new T[vector.capacity];
     copy_vector(vector);
   }
   Vector(Vector&& vector) noexcept {
@@ -46,7 +53,7 @@ class Vector {
     if(target < size) {
       // should probably be throwing a more specific error here but whatever
       throw std::runtime_error(
-          "Attempted to reserve array to less than its current size");
+        "attempted to reserve array to less than its current size");
     }
     T* temp = new T[target];
     copy(array, temp);
@@ -54,21 +61,18 @@ class Vector {
     array    = temp;
     capacity = target;
   }
-  T& at(size_t pos) {
-    const auto isOutOfBounds = pos > size - 1;
+  T& at(size_t pos) const {
+    const auto isOutOfBounds = pos >= size;
     if(isOutOfBounds) {
       const auto errMessage =
-          "index: " + std::to_string(pos) +
-          " is out of range (capacity: " + std::to_string(capacity) + ")";
+        "index: " + std::to_string(pos) +
+        " is out of range (size: " + std::to_string(size) + ")";
       throw std::out_of_range(errMessage);
     }
     return array[pos];
   }
   T* data() {
     return array;
-  }
-  void shrink_to_fit() {
-    reserve(size);
   }
   T& back() {
     return array[size - 1];
@@ -90,8 +94,11 @@ class Vector {
   }
   Vector& operator=(const Vector& other) {
     copy_vector(other);
+    return *this;
   }
   Vector& operator=(Vector&& other) noexcept {
     move_vector(other);
+    return *this;
   }
 };
+

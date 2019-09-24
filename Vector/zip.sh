@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if ! hash tar 2> /dev/null; then
-    echo -e "\e[31m[ERROR] \e[0mAre you running on a linux VM or using cygwin? Your system doesn't seem to have a 'tar' command."
+    echo -e "\e[31m[ERROR] \e[0mAre you running on a linux VM or using cygwin? Your system doesn'T seem to have a 'tar' command."
     exit 1
 fi
 

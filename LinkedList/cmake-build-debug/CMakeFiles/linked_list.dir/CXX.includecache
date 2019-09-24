@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/main.h
+
+/home/xetera/cs1d/LinkedList/src/linked_list.hpp
+
+/home/xetera/cs1d/LinkedList/src/main.cpp
+main.h
+/home/xetera/cs1d/LinkedList/src/main.h
+iostream
+-
+linked_list.hpp
+/home/xetera/cs1d/LinkedList/src/linked_list.hpp
+vector
+/home/xetera/cs1d/LinkedList/src/vector
+

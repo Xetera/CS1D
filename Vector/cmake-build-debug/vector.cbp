@@ -86,7 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/xetera/cs1d/Vector/src/vector.cpp">
+		<Unit filename="/home/xetera/cs1d/Vector/src/Vector.cpp">
 			<Option target="vector"/>
 		</Unit>
 		<Unit filename="/home/xetera/cs1d/Vector/CMakeLists.txt">

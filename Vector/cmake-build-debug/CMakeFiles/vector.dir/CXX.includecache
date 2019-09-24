@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/vector.hpp
+../include/Vector.hpp
 cstddef
 -
 sstream
@@ -14,7 +14,7 @@ sstream
 stdexcept
 -
 
-/home/xetera/cs1d/Vector/src/vector.cpp
-vector.hpp
-/home/xetera/cs1d/Vector/src/vector.hpp
+/home/xetera/cs1d/Vector/src/Vector.cpp
+Vector.hpp
+/home/xetera/cs1d/Vector/src/Vector.hpp
 

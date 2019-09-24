@@ -57,27 +57,27 @@ include CMakeFiles/vector.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/vector.dir/flags.make
 
-CMakeFiles/vector.dir/src/vector.cpp.o: CMakeFiles/vector.dir/flags.make
-CMakeFiles/vector.dir/src/vector.cpp.o: ../src/vector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xetera/cs1d/Vector/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/vector.dir/src/vector.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vector.dir/src/vector.cpp.o -c /home/xetera/cs1d/Vector/src/vector.cpp
+CMakeFiles/vector.dir/src/Vector.cpp.o: CMakeFiles/vector.dir/flags.make
+CMakeFiles/vector.dir/src/Vector.cpp.o: ../src/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xetera/cs1d/Vector/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/vector.dir/src/Vector.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vector.dir/src/Vector.cpp.o -c /home/xetera/cs1d/Vector/src/Vector.cpp
 
-CMakeFiles/vector.dir/src/vector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vector.dir/src/vector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xetera/cs1d/Vector/src/vector.cpp > CMakeFiles/vector.dir/src/vector.cpp.i
+CMakeFiles/vector.dir/src/Vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vector.dir/src/Vector.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xetera/cs1d/Vector/src/Vector.cpp > CMakeFiles/vector.dir/src/Vector.cpp.i
 
-CMakeFiles/vector.dir/src/vector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vector.dir/src/vector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xetera/cs1d/Vector/src/vector.cpp -o CMakeFiles/vector.dir/src/vector.cpp.s
+CMakeFiles/vector.dir/src/Vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vector.dir/src/Vector.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xetera/cs1d/Vector/src/Vector.cpp -o CMakeFiles/vector.dir/src/Vector.cpp.s
 
 # Object files for target vector
 vector_OBJECTS = \
-"CMakeFiles/vector.dir/src/vector.cpp.o"
+"CMakeFiles/vector.dir/src/Vector.cpp.o"
 
 # External object files for target vector
 vector_EXTERNAL_OBJECTS =
 
-vector: CMakeFiles/vector.dir/src/vector.cpp.o
+vector: CMakeFiles/vector.dir/src/Vector.cpp.o
 vector: CMakeFiles/vector.dir/build.make
 vector: CMakeFiles/vector.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xetera/cs1d/Vector/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vector"

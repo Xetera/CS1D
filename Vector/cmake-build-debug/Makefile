@@ -123,32 +123,32 @@ vector/fast:
 	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/build
 .PHONY : vector/fast
 
-src/vector.o: src/vector.cpp.o
+src/Vector.o: src/Vector.cpp.o
 
-.PHONY : src/vector.o
+.PHONY : src/Vector.o
 
 # target to build an object file
-src/vector.cpp.o:
-	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/vector.cpp.o
-.PHONY : src/vector.cpp.o
+src/Vector.cpp.o:
+	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/Vector.cpp.o
+.PHONY : src/Vector.cpp.o
 
-src/vector.i: src/vector.cpp.i
+src/Vector.i: src/Vector.cpp.i
 
-.PHONY : src/vector.i
+.PHONY : src/Vector.i
 
 # target to preprocess a source file
-src/vector.cpp.i:
-	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/vector.cpp.i
-.PHONY : src/vector.cpp.i
+src/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/Vector.cpp.i
+.PHONY : src/Vector.cpp.i
 
-src/vector.s: src/vector.cpp.s
+src/Vector.s: src/Vector.cpp.s
 
-.PHONY : src/vector.s
+.PHONY : src/Vector.s
 
 # target to generate assembly for a file
-src/vector.cpp.s:
-	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/vector.cpp.s
-.PHONY : src/vector.cpp.s
+src/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles/vector.dir/build.make CMakeFiles/vector.dir/src/Vector.cpp.s
+.PHONY : src/Vector.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... vector"
 	@echo "... edit_cache"
-	@echo "... src/vector.o"
-	@echo "... src/vector.i"
-	@echo "... src/vector.s"
+	@echo "... src/Vector.o"
+	@echo "... src/Vector.i"
+	@echo "... src/Vector.s"
 .PHONY : help
 
 
