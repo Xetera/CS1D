@@ -44,21 +44,21 @@ RM = /home/xetera/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.6817.18/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xetera/cs1d/LinkedList
+CMAKE_SOURCE_DIR = /home/xetera/cs1d/DLinkedList
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xetera/cs1d/LinkedList/cmake-build-debug
+CMAKE_BINARY_DIR = /home/xetera/cs1d/DLinkedList/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/LinkedList.dir/all
+all: CMakeFiles/DLinkedList.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/LinkedList.dir/clean
+clean: CMakeFiles/DLinkedList.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/LinkedList.dir
+# Target rules for target CMakeFiles/DLinkedList.dir
 
 # All Build rule for target.
-CMakeFiles/LinkedList.dir/all:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/depend
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target LinkedList"
-.PHONY : CMakeFiles/LinkedList.dir/all
+CMakeFiles/DLinkedList.dir/all:
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/depend
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target DLinkedList"
+.PHONY : CMakeFiles/DLinkedList.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/LinkedList.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LinkedList.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/LinkedList.dir/rule
+CMakeFiles/DLinkedList.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DLinkedList.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/DLinkedList.dir/rule
 
 # Convenience name for target.
-LinkedList: CMakeFiles/LinkedList.dir/rule
+DLinkedList: CMakeFiles/DLinkedList.dir/rule
 
-.PHONY : LinkedList
+.PHONY : DLinkedList
 
 # clean rule for target.
-CMakeFiles/LinkedList.dir/clean:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/clean
-.PHONY : CMakeFiles/LinkedList.dir/clean
+CMakeFiles/DLinkedList.dir/clean:
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/clean
+.PHONY : CMakeFiles/DLinkedList.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

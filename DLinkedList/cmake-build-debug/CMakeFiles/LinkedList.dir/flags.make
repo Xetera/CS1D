@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/xetera/cs1d/LinkedList/include 
+CXX_INCLUDES = -I/home/xetera/cs1d/DLinkedList/include 
 

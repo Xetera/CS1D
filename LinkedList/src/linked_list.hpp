@@ -12,6 +12,9 @@ struct Node {
 
 template <typename T>
 class LinkedList {
+  /**
+   * I couldn't get this iterator class to work and I'm so sad about it
+   */
   class NodeIterator {
     T* ptr;
 

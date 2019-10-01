@@ -48,10 +48,10 @@ RM = /home/xetera/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.6817.18/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xetera/cs1d/LinkedList
+CMAKE_SOURCE_DIR = /home/xetera/cs1d/DLinkedList
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xetera/cs1d/LinkedList/cmake-build-debug
+CMAKE_BINARY_DIR = /home/xetera/cs1d/DLinkedList/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles /home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles /home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/LinkedList/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xetera/cs1d/DLinkedList/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named LinkedList
+# Target rules for targets named DLinkedList
 
 # Build rule for target.
-LinkedList: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LinkedList
-.PHONY : LinkedList
+DLinkedList: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DLinkedList
+.PHONY : DLinkedList
 
 # fast build rule for target.
-LinkedList/fast:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/build
-.PHONY : LinkedList/fast
+DLinkedList/fast:
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/build
+.PHONY : DLinkedList/fast
 
 src/linked_list.o: src/linked_list.cpp.o
 
@@ -129,7 +129,7 @@ src/linked_list.o: src/linked_list.cpp.o
 
 # target to build an object file
 src/linked_list.cpp.o:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/linked_list.cpp.o
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/linked_list.cpp.o
 .PHONY : src/linked_list.cpp.o
 
 src/linked_list.i: src/linked_list.cpp.i
@@ -138,7 +138,7 @@ src/linked_list.i: src/linked_list.cpp.i
 
 # target to preprocess a source file
 src/linked_list.cpp.i:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/linked_list.cpp.i
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/linked_list.cpp.i
 .PHONY : src/linked_list.cpp.i
 
 src/linked_list.s: src/linked_list.cpp.s
@@ -147,7 +147,7 @@ src/linked_list.s: src/linked_list.cpp.s
 
 # target to generate assembly for a file
 src/linked_list.cpp.s:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/linked_list.cpp.s
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/linked_list.cpp.s
 .PHONY : src/linked_list.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -156,7 +156,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -165,7 +165,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,7 +174,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/DLinkedList.dir/build.make CMakeFiles/DLinkedList.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -184,7 +184,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... LinkedList"
+	@echo "... DLinkedList"
 	@echo "... edit_cache"
 	@echo "... src/linked_list.o"
 	@echo "... src/linked_list.i"

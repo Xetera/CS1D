@@ -4,6 +4,5 @@
 CMakeFiles/LinkedList.dir/src/linked_list.cpp.o: ../src/linked_list.cpp
 CMakeFiles/LinkedList.dir/src/linked_list.cpp.o: ../src/linked_list.hpp
 
-CMakeFiles/LinkedList.dir/src/main.cpp.o: ../src/linked_list.hpp
 CMakeFiles/LinkedList.dir/src/main.cpp.o: ../src/main.cpp
 
