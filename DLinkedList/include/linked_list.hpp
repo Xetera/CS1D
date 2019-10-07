@@ -45,23 +45,6 @@ NodePairs<T> splitMiddle(Node<T>* const source) {
 
 template <typename T>
 class DLinkedList {
-  /**
-   * Grabs the last item in the linked list
-   *
-   * @bigO O(n)
-   * @param item
-   * @return
-   */
-  Node<T>* last(Node<T>* const item) {
-    if(item == nullptr) {
-      return nullptr;
-    }
-    Node<T>* current = item;
-    while(current->next != nullptr) {
-      current = current->next;
-    }
-    return current;
-  }
   void swap(DLinkedList& list) noexcept {
     std::swap(this->head, list.head);
   }
@@ -87,20 +70,19 @@ class DLinkedList {
   /**
    * Merge sort algorithm
    */
-  void sort(Node<T>* node) {
-    Node<T>* nptr    = node;
+  void sort(Node<T>** node) {
+    Node<T>* nptr    = *node;
     bool noMoreNodes = nptr == nullptr || nptr->next == nullptr;
 
     if(noMoreNodes) {
       return;
     }
 
-    auto [begin, middle] = splitMiddle(node);
-    sort(begin);
-    sort(middle);
+    auto [begin, middle] = splitMiddle(nptr);
+    sort(&begin);
+    sort(&middle);
 
-    nptr             = mergeBack(begin, middle);
-    nptr->prev       = nullptr;
+    *node = mergeBack(begin, middle);
   }
 
  public:
@@ -126,7 +108,7 @@ class DLinkedList {
     length += 1;
   }
   void sort() {
-    sort(head);
+    sort(&head);
   }
   DLinkedList() = default;
   /**
@@ -149,7 +131,11 @@ class DLinkedList {
       add(*i);
     }
   }
-  DLinkedList& operator=(DLinkedList rhs) {
+  DLinkedList& operator=(const DLinkedList& rhs) {
+    *this = DLinkedList(rhs);
+    return *this;
+  }
+  DLinkedList& operator=(DLinkedList&& rhs) noexcept {
     rhs.swap(*this);
     return *this;
   }
