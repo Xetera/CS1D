@@ -6,11 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/xetera/cs1d/Vector/src/Vector.cpp
+/home/xetera/cs1d/Vector/src/main.cpp
 cstdio
 -
 stdexcept
 -
 iostream
+-
+Vector.hpp
+/home/xetera/cs1d/Vector/src/Vector.hpp
+
+include/Vector.hpp
+cstddef
+-
+sstream
+-
+stdexcept
+-
+initializer_list
 -
 

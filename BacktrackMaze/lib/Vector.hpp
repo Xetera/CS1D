@@ -1,31 +1,11 @@
 #include <cstddef>
 #include <sstream>
 #include <stdexcept>
-#include <initializer_list>
 
 using std::size_t;
 
 template <class T>
 class Vector {
-  class Iterator
-  {
-  public:
-    Iterator(const Vector<T> *vector, int index) : vector { vector }, index { index } {};
-    const T &operator*() const {
-     return vector->at(index);
-    }
-    Iterator &operator++() {
-      ++index;
-      return *this;
-    };
-    bool operator!=(const Iterator &other) const {
-      return index != other.index;
-    };
-
-  private:
-    const Vector<T> *vector;
-    int index = -1;
-  };
   static constexpr size_t DEFAULT_CAPACITY = 1;
   static constexpr size_t DEFAULT_SIZE     = 0;
   T* array;
@@ -62,14 +42,6 @@ public:
   Vector(const Vector& vector) {
     array = new T[vector.capacity];
     copy_vector(vector);
-  }
-  Vector(const std::initializer_list<T>&lst) {
-    const size_t amount = lst.size();
-    array = new T[amount];
-    reserve(amount);
-    for (const T* i = lst.begin(); i != lst.end(); ++i) {
-      push_back(*i);
-    }
   }
   Vector(Vector&& vector) noexcept {
     move_vector(vector);
@@ -119,12 +91,6 @@ public:
   }
   void pop_back() {
     size -= 1;
-  }
-  Vector::Iterator begin() const {
-    return Vector<T>::Iterator { this, 0 };
-  }
-  Vector::Iterator end() const {
-    return Vector<T>::Iterator { this, size };
   }
   Vector& operator=(const Vector& other) {
     copy_vector(other);

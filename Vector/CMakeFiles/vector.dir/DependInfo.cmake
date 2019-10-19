@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/xetera/cs1d/Vector/src/Vector.cpp" "/home/xetera/cs1d/Vector/CMakeFiles/vector.dir/src/Vector.cpp.o"
-  "/home/xetera/cs1d/Vector/src/vector.cpp" "/home/xetera/cs1d/Vector/CMakeFiles/vector.dir/src/vector.cpp.o"
+  "/home/xetera/cs1d/Vector/src/main.cpp" "/home/xetera/cs1d/Vector/CMakeFiles/vector.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
