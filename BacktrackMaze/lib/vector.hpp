@@ -1,11 +1,34 @@
+#pragma once
+
 #include <cstddef>
 #include <sstream>
 #include <stdexcept>
+#include <initializer_list>
+#include <functional>
 
 using std::size_t;
 
 template <class T>
 class Vector {
+  class Iterator
+  {
+  public:
+    Iterator(const Vector<T> *vector, size_t index) : vector { vector }, index { index } {};
+    const T &operator*() const {
+     return vector->at(index);
+    }
+    Iterator &operator++() {
+      ++index;
+      return *this;
+    };
+    bool operator!=(const Iterator &other) const {
+      return index != other.index;
+    };
+
+  private:
+    const Vector<T> *vector;
+    size_t index;
+  };
   static constexpr size_t DEFAULT_CAPACITY = 1;
   static constexpr size_t DEFAULT_SIZE     = 0;
   T* array;
@@ -39,9 +62,26 @@ public:
   Vector() {
     array = new T[capacity];
   }
+  explicit Vector(int size) {
+    array = new T[size];
+  }
+  Vector(int size, const T initial) {
+    array = new T[size];
+    for (size_t i = 0; i < size; ++i) {
+      push_back(initial);
+    }
+  }
   Vector(const Vector& vector) {
     array = new T[vector.capacity];
     copy_vector(vector);
+  }
+  Vector(const std::initializer_list<T>&lst) {
+    const size_t amount = lst.size();
+    array = new T[amount];
+    reserve(amount);
+    for (const T* i = lst.begin(); i != lst.end(); ++i) {
+      push_back(*i);
+    }
   }
   Vector(Vector&& vector) noexcept {
     move_vector(vector);
@@ -61,6 +101,13 @@ public:
     array    = temp;
     capacity = target;
   }
+  void reverse() {
+    for (size_t i = 0, j = size - 1; j >= i; ++i, --j) {
+      T temp = array[j];
+      array[j] = array[i];
+      array[i] = temp;
+    }
+  }
   T& at(size_t pos) const {
     const auto isOutOfBounds = pos >= size;
     if(isOutOfBounds) {
@@ -70,6 +117,15 @@ public:
       throw std::out_of_range(errMessage);
     }
     return array[pos];
+  }
+  Vector<T> filter(std::function<bool(T)> f) const {
+    Vector<T> out;
+    for (const T& elem : *this) {
+      if (f(elem)) {
+        out.push_back(elem);
+      }
+    }
+    return out;
   }
   T* data() {
     return array;
@@ -92,6 +148,12 @@ public:
   void pop_back() {
     size -= 1;
   }
+  Vector::Iterator begin() const {
+    return Vector<T>::Iterator { this, 0 };
+  }
+  Vector::Iterator end() const {
+    return Vector<T>::Iterator { this, size };
+  }
   Vector& operator=(const Vector& other) {
     copy_vector(other);
     return *this;
@@ -100,5 +162,7 @@ public:
     move_vector(other);
     return *this;
   }
+  T& operator[](int x) {
+    return at(x);
+  }
 };
-
