@@ -12,23 +12,23 @@ struct Node {
 
 template <typename T>
 class LinkedList {
-  /**
-   * I couldn't get this iterator class to work and I'm so sad about it
-   */
   class NodeIterator {
-    T* ptr;
+    Node<T>* elem;
 
    public:
-    explicit NodeIterator(T& ptr) : ptr(&ptr) {}
-    NodeIterator operator++() {
-      ptr->next;
+    explicit NodeIterator(const LinkedList<T>* ptr) : elem(ptr ? ptr->head : nullptr) {}
+    NodeIterator& operator++() {
+      elem = elem->next;
       return *this;
     }
-    bool operator!=(const T& other) const {
-      return ptr != other.ptr;
+    bool operator!=(const NodeIterator& other) const {
+      return elem != other.elem;
     }
-    T& operator*() const {
-      return *ptr;
+    const T& operator*() const {
+      return elem->item;
+    }
+    ~NodeIterator() {
+      elem = nullptr;
     }
   };
   /**
@@ -39,7 +39,6 @@ class LinkedList {
    * @return
    */
   Node<T>* last(Node<T>* const item) {
-    // _sigh_ if only C++ had typeclasses...
     if(item == nullptr) {
       return nullptr;
     }
@@ -51,6 +50,7 @@ class LinkedList {
   }
   void swap(LinkedList& list) noexcept {
     std::swap(this->head, list.head);
+    std::swap(length, list.length);
   }
 
  public:
@@ -74,11 +74,7 @@ class LinkedList {
     return *this;
   }
   LinkedList() = default;
-  /**
-   * Constructing Linked List from iterables
-   * @tparam C (extends Iterable)
-   * @param iter
-   */
+
   template <typename C>
   explicit LinkedList(const C& iter) : LinkedList{ iter.begin(), iter.end() } {}
   LinkedList(const std::initializer_list<T>& list)
@@ -93,11 +89,29 @@ class LinkedList {
       add(*i);
     }
   }
-  NodeIterator begin() {
-    return NodeIterator(head);
+  T peek() {
+    if (head == nullptr) {
+      throw std::out_of_range("List is empty");
+    }
+    return head->item;
   }
-  NodeIterator end() {
-    return nullptr;
+  void pop_front() noexcept(false) {
+    if (head == nullptr) {
+      throw std::out_of_range("List is empty");
+    }
+    const Node<T>* first = head;
+    head = head->next;
+    length--;
+    delete first;
+  }
+  bool empty() const {
+    return head == nullptr;
+  }
+  LinkedList<T>::NodeIterator begin() {
+    return LinkedList<T>::NodeIterator { this };
+  }
+  LinkedList<T>::NodeIterator end() {
+    return LinkedList<T>::NodeIterator { nullptr };
   }
   LinkedList& operator=(LinkedList rhs) {
     rhs.swap(*this);

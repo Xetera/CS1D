@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xetera/cs1d/Stack/lib/stack.cpp
+stack.hpp
+/home/xetera/cs1d/Stack/lib/stack.hpp
+iostream
+-
+
+/home/xetera/cs1d/Stack/lib/stack.hpp
+vector.hpp
+/home/xetera/cs1d/Stack/lib/vector.hpp
+
+/home/xetera/cs1d/Stack/lib/vector.hpp
+cstddef
+-
+sstream
+-
+stdexcept
+-
+initializer_list
+-
+

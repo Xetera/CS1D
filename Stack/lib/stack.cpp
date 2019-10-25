@@ -1,6 +1,7 @@
-#include "main.hpp"
+#include "stack.hpp"
 #include <iostream>
 
 int main() {
-    return 0;
+  Stack<int> e{1, 2};
+  return 0;
 }

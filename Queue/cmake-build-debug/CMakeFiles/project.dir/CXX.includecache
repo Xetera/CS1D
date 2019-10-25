@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xetera/cs1d/Queue/lib/linked_list.hpp
+cstdio
+-
+functional
+-
+initializer_list
+-
+
+/home/xetera/cs1d/Queue/lib/queue.cpp
+queue.hpp
+/home/xetera/cs1d/Queue/lib/queue.hpp
+iostream
+-
+
+/home/xetera/cs1d/Queue/lib/queue.hpp
+linked_list.hpp
+/home/xetera/cs1d/Queue/lib/linked_list.hpp
+initializer_list
+-
+

@@ -145,24 +145,25 @@ Traceback explore(const Maze &maze,
 
 int main() {
   Maze maze{
-    Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::WALL, Cell::EMPTY, Cell::EMPTY},
+    Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::WALL,  Cell::EMPTY, Cell::EMPTY},
     Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::EMPTY},
-    Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::WALL, Cell::EMPTY},
-    Vector<Cell>{Cell::WALL, Cell::WALL, Cell::EMPTY, Cell::WALL, Cell::WALL},
+    Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::WALL,  Cell::EMPTY},
+    Vector<Cell>{Cell::WALL,  Cell::WALL,  Cell::EMPTY, Cell::WALL,  Cell::WALL },
     Vector<Cell>{Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::EMPTY, Cell::EMPTY},
   };
   Coordinate start{0, 4};
-  Coordinate end{3, 2};
+  Coordinate end{4, 4 };
   const Traceback traceback = explore(maze, start, end);
   print(traceback, start, end);
   Vector<Coordinate> solution = shortestPath(traceback, start, end);
   // the solution is reached from the end goal to the start, so we have to reverse it in place
   solution.reverse();
-  auto c = canStop(maze, solution, end);
+  const bool stopping = canStop(maze, solution, end);
 
   std::cout << "Solution:\n";
   for (const Coordinate &coord : solution) {
     std::cout << "(" << coord.first << ", " << coord.second << ")\n";
   }
+  std::cout << "Once the ball has reached the goal it" << (stopping ? " CAN " : " CANNOT ") << "stop";
   return 0;
 }
