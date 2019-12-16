@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xetera/cs1d/Hashmap/lib/main.cpp
+main.hpp
+/home/xetera/cs1d/Hashmap/lib/main.hpp
+iostream
+-
+
+/home/xetera/cs1d/Hashmap/lib/main.hpp
+

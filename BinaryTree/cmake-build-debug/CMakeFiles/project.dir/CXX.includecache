@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xetera/cs1d/BinaryTree/lib/tree.cpp
+tree.hpp
+/home/xetera/cs1d/BinaryTree/lib/tree.hpp
+
+/home/xetera/cs1d/BinaryTree/lib/tree.hpp
+
